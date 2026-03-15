@@ -3,6 +3,12 @@ import { Download } from "lucide-react";
 import heroMockup from "@/assets/hero-mockup.png";
 
 const Hero = () => {
+  const handleDownloadClick = () => {
+    if (typeof window !== "undefined" && (window as any).ym) {
+      (window as any).ym(107711909, "reachGoal", "download_plugin");
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-0">
       {/* Content */}
@@ -25,7 +31,11 @@ const Hero = () => {
               size="lg"
               className="h-14 px-16 bg-[#167EDD] hover:bg-[#167EDD]/90 text-white font-semibold text-lg"
             >
-              <a href={`${import.meta.env.BASE_URL}Flumen.zip`} download="Flumen.zip">
+              <a
+                href={`${import.meta.env.BASE_URL}Flumen.zip`}
+                download="Flumen.zip"
+                onClick={handleDownloadClick}
+              >
                 <Download className="mr-2 h-6 w-6" />
                 Скачать плагин
               </a>
