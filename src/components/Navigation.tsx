@@ -73,7 +73,11 @@ const Navigation = () => {
             variant="outline"
             className="bg-white border-2 border-[#167EDD] text-[#167EDD] hover:bg-[#167EDD]/10"
           >
-            <a href={`${import.meta.env.BASE_URL}Flumen.zip`} download="Flumen.zip">
+            <a
+              href={`${import.meta.env.BASE_URL}Flumen.zip`}
+              download="Flumen.zip"
+              onClick={() => window.open("/install", "_blank")}
+            >
               <Download className="mr-2 h-4 w-4" />
               Скачать
             </a>
