@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, CheckCircle, AlertTriangle, Shield } from "lucide-react";
+import { ArrowLeft, Download, CheckCircle, AlertTriangle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 const InstallGuide = () => {
   const handleDownload = () => {
     const a = document.createElement("a");
-    a.href = `${import.meta.env.BASE_URL}Flumen.zip`;
-    a.download = "Flumen.zip";
+    a.href = "/Flumen.exe";
+    a.download = "Flumen.exe";
     a.click();
   };
 
@@ -37,7 +37,7 @@ const InstallGuide = () => {
           <section>
             <div className="flex items-center gap-3 mb-4">
               <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#167EDD] text-white flex items-center justify-center font-bold text-sm">1</span>
-              <h2 className="text-xl font-semibold">Скачайте архив с плагином</h2>
+              <h2 className="text-xl font-semibold">Скачайте установщик</h2>
             </div>
             <div className="pl-11 space-y-4 text-muted-foreground leading-relaxed">
               <p>Если вы ещё не скачали плагин, нажмите кнопку ниже.</p>
@@ -46,7 +46,7 @@ const InstallGuide = () => {
                 className="bg-[#167EDD] hover:bg-[#167EDD]/90 text-white"
               >
                 <Download className="mr-2 h-4 w-4" />
-                Скачать Flumen.zip
+                Скачать Flumen.exe
               </Button>
             </div>
           </section>
@@ -55,11 +55,11 @@ const InstallGuide = () => {
           <section>
             <div className="flex items-center gap-3 mb-4">
               <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#167EDD] text-white flex items-center justify-center font-bold text-sm">2</span>
-              <h2 className="text-xl font-semibold">Распакуйте архив и запустите установщик</h2>
+              <h2 className="text-xl font-semibold">Запустите установщик</h2>
             </div>
             <div className="pl-11 space-y-3 text-muted-foreground leading-relaxed">
-              <p>Откройте скачанный файл <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">Flumen.zip</code> и извлеките его содержимое в удобную папку.</p>
-              <p>Запустите файл установщика из распакованной папки.</p>
+              <p>Откройте скачанный файл <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">Flumen.exe</code>.</p>
+              <p>Если Windows покажет предупреждение безопасности, разрешите запуск и продолжите установку по шагам ниже.</p>
             </div>
           </section>
 
@@ -76,14 +76,13 @@ const InstallGuide = () => {
                   <div>
                     <p className="font-semibold text-amber-800 mb-1">Почему появляется это предупреждение?</p>
                     <p className="text-amber-700 text-sm leading-relaxed">
-                      Windows SmartScreen предупреждает о приложениях, у которых ещё не накоплена история загрузок.
-                      Плагин Flumen безопасен — предупреждение появляется из-за отсутствия расширенного сертификата
-                      подписи (EV-сертификат), который стоит дорого для небольших компаний.
+                      Windows SmartScreen предупреждает о приложениях, у которых ещё не накоплена история загрузок,
+                      плагин Flumen безопасен.
                     </p>
                   </div>
                 </div>
               </div>
-              <p>Чтобы продолжить установку:</p>
+              <p>Чтобы продолжить установку (например, в Windows 10):</p>
               <ol className="space-y-2 list-none pl-0">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
@@ -94,65 +93,128 @@ const InstallGuide = () => {
                   <span>Нажмите <strong className="text-foreground">«Выполнить в любом случае»</strong></span>
                 </li>
               </ol>
+              <div className="grid gap-4 md:grid-cols-2">
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/smartscreen-more.png"
+                    alt="Окно SmartScreen с кнопкой Подробнее"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/smartscreen-run-anyway.png"
+                    alt="Окно SmartScreen с кнопкой Выполнить в любом случае"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
             </div>
           </section>
 
-          {/* Шаг 4 — Антивирус */}
+          {/* Шаг 4 */}
           <section>
             <div className="flex items-center gap-3 mb-4">
               <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#167EDD] text-white flex items-center justify-center font-bold text-sm">4</span>
-              <h2 className="text-xl font-semibold">Если антивирус заблокировал установку</h2>
+              <h2 className="text-xl font-semibold">Пройдите шаги мастера установки</h2>
             </div>
-            <div className="pl-11 space-y-5 text-muted-foreground leading-relaxed">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <div className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-blue-700 text-sm leading-relaxed">
-                    Антивирус может заблокировать установщик как «потенциально нежелательную программу» — это ложное
-                    срабатывание. Ниже — инструкции для популярных антивирусов.
-                  </p>
-                </div>
+            <div className="pl-11 space-y-3 text-muted-foreground leading-relaxed">
+              <p>Далее следуйте шагам мастера установки в этом порядке:</p>
+              <ol className="space-y-2 list-none pl-0">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Нажмите <strong className="text-foreground">«Установить»</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Подтвердите запуск и нажмите <strong className="text-foreground">«Установить»</strong> второй раз</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Примите условия лицензионного соглашения</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Укажите папку установки (или оставьте путь по умолчанию)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Дождитесь завершения установки и откройте Microsoft Word</span>
+                </li>
+              </ol>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/setup-first.png"
+                    alt="Экран установщика Flumen с кнопкой Установить"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/setup-install-button.png"
+                    alt="Экран мастера с кнопкой Установить"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/setup-license.png"
+                    alt="Экран лицензионного соглашения"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/setup-folder.png"
+                    alt="Экран выбора папки установки"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure className="rounded-lg border border-border p-2 bg-card">
+                  <img
+                    src="/install-guide/setup-finish-open-word.png"
+                    alt="Экран завершения установки с запуском Microsoft Word"
+                    className="w-full rounded-md"
+                    loading="lazy"
+                  />
+                </figure>
               </div>
-
-              <div className="space-y-6">
-
-                <div className="border border-border rounded-lg p-5">
-                  <p className="font-semibold text-foreground mb-3">Windows Defender</p>
-                  <ol className="space-y-1.5 text-sm list-decimal pl-5">
-                    <li>В уведомлении «Угроза заблокирована» нажмите <strong className="text-foreground">«Подробнее»</strong></li>
-                    <li>Выберите <strong className="text-foreground">«Разрешить на устройстве»</strong></li>
-                    <li>Нажмите <strong className="text-foreground">«Разрешить»</strong> и запустите установщик снова</li>
-                  </ol>
+              <div className="pt-2">
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div className="space-y-3">
+                      <p className="text-amber-900">
+                        <strong className="text-amber-900">Если установка завершилась с ошибкой:</strong>{" "}
+                        пришлите логи в Telegram{" "}
+                        <a href="https://t.me/aipadfoot" className="text-[#167EDD] hover:text-[#167EDD]/80 transition-colors">
+                          @aipadfoot
+                        </a>{" "}
+                        или{" "}
+                        <a href="https://t.me/pronomous" className="text-[#167EDD] hover:text-[#167EDD]/80 transition-colors">
+                          @pronomous
+                        </a>{" "}
+                        — оперативно поможем решить проблему. Логи возьмите по ссылке
+                        <strong className="text-amber-900"> «в файле журнала»</strong> в окне ошибки.
+                      </p>
+                      <figure className="rounded-lg border border-amber-200 p-2 bg-white max-w-md">
+                        <img
+                          src="/install-guide/setup-error-log.png"
+                          alt="Окно ошибки установки с ссылкой на файл журнала"
+                          className="w-full rounded-md"
+                          loading="lazy"
+                        />
+                      </figure>
+                    </div>
+                  </div>
                 </div>
-
-                <div className="border border-border rounded-lg p-5">
-                  <p className="font-semibold text-foreground mb-3">Kaspersky</p>
-                  <ol className="space-y-1.5 text-sm list-decimal pl-5">
-                    <li>Откройте Kaspersky → <strong className="text-foreground">Настройки → Угрозы и исключения</strong></li>
-                    <li>В разделе «Исключения» нажмите <strong className="text-foreground">«Настроить исключения»</strong></li>
-                    <li>Добавьте папку с установщиком Flumen в исключения</li>
-                    <li>Запустите установщик снова</li>
-                  </ol>
-                </div>
-
-                <div className="border border-border rounded-lg p-5">
-                  <p className="font-semibold text-foreground mb-3">Dr.Web</p>
-                  <ol className="space-y-1.5 text-sm list-decimal pl-5">
-                    <li>В трее щёлкните правой кнопкой по значку Dr.Web</li>
-                    <li>Выберите <strong className="text-foreground">«Отключить SpIDer Guard»</strong> на время установки</li>
-                    <li>После завершения установки снова включите защиту</li>
-                  </ol>
-                </div>
-
-                <div className="border border-border rounded-lg p-5">
-                  <p className="font-semibold text-foreground mb-3">ESET NOD32</p>
-                  <ol className="space-y-1.5 text-sm list-decimal pl-5">
-                    <li>Откройте ESET → <strong className="text-foreground">Настройки → Дополнительно</strong></li>
-                    <li>В разделе обнаружения угроз добавьте файл установщика в исключения</li>
-                    <li>Запустите установщик снова</li>
-                  </ol>
-                </div>
-
               </div>
             </div>
           </section>
@@ -161,33 +223,47 @@ const InstallGuide = () => {
           <section>
             <div className="flex items-center gap-3 mb-4">
               <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#167EDD] text-white flex items-center justify-center font-bold text-sm">5</span>
-              <h2 className="text-xl font-semibold">Завершите установку и перезапустите Word</h2>
+              <h2 className="text-xl font-semibold">Проверьте, что плагин открыт в Word</h2>
             </div>
             <div className="pl-11 space-y-3 text-muted-foreground leading-relaxed">
-              <p>Пройдите шаги установщика и дождитесь завершения.</p>
-              <p>
-                После установки <strong className="text-foreground">перезапустите Microsoft Word</strong> — плагин
-                появится во вкладке <strong className="text-foreground">Flumen</strong> на панели инструментов.
-              </p>
+              <p>После запуска Word плагин Flumen должен открыться справа в первом открытом документе.</p>
+              <p>Если панель не появилась автоматически:</p>
+              <ol className="space-y-2 list-none pl-0">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Откройте вкладку <strong className="text-foreground">«Вставка»</strong> в Word</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Нажмите <strong className="text-foreground">«Надстройки» / «Мои надстройки»</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
+                  <span>Выберите <strong className="text-foreground">Flumen</strong> и нажмите <strong className="text-foreground">«Открыть»</strong></span>
+                </li>
+              </ol>
+              <figure className="rounded-lg border border-border p-2 bg-card">
+                <img
+                  src="/install-guide/word-plugin-panel.png"
+                  alt="Word с открытой правой панелью плагина Flumen"
+                  className="w-full rounded-md"
+                  loading="lazy"
+                />
+              </figure>
             </div>
           </section>
 
-        </div>
+          {/* Шаг 6 */}
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#167EDD] text-white flex items-center justify-center font-bold text-sm">6</span>
+              <h2 className="text-xl font-semibold">Пройдите авторизацию</h2>
+            </div>
+            <div className="pl-11 space-y-3 text-muted-foreground leading-relaxed">
+              <p>В открывшейся панели Flumen введите email и пароль от вашего аккаунта.</p>
+            </div>
+          </section>
 
-        {/* Контакты */}
-        <div className="mt-16 pt-8 border-t border-border">
-          <p className="text-muted-foreground leading-relaxed">
-            Возникли проблемы?{" "}
-            Напишите нам в{" "}
-            <a href="https://t.me/flumen_support" className="text-[#167EDD] hover:text-[#167EDD]/80 transition-colors">
-              Telegram
-            </a>{" "}
-            или на{" "}
-            <a href="mailto:info@flumen.tech" className="text-[#167EDD] hover:text-[#167EDD]/80 transition-colors">
-              info@flumen.tech
-            </a>{" "}
-            — поможем разобраться.
-          </p>
         </div>
       </main>
 
