@@ -33,8 +33,8 @@ const Hero = () => {
               className="h-14 px-8 bg-[#167EDD] hover:bg-[#167EDD]/90 text-white font-semibold text-lg"
             >
               <a
-                href={`${import.meta.env.BASE_URL}Flumen.zip`}
-                download="Flumen.zip"
+                href="/Flumen.exe"
+                download="Flumen.exe"
                 onClick={handleDownloadClick}
               >
                 <Download className="mr-2 h-6 w-6" />
