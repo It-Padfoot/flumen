@@ -7,6 +7,7 @@ const Hero = () => {
     if (typeof window !== "undefined" && (window as any).ym) {
       (window as any).ym(107711909, "reachGoal", "download_plugin");
     }
+    window.open("/install", "_blank");
   };
 
   return (
@@ -25,21 +26,29 @@ const Hero = () => {
           </p>
 
           {/* CTA Button */}
-          <div className="animate-fade-in-up [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
+          <div className="animate-fade-in-up [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards] flex flex-col items-center gap-3">
             <Button
               asChild
               size="lg"
-              className="h-14 px-16 bg-[#167EDD] hover:bg-[#167EDD]/90 text-white font-semibold text-lg"
+              className="h-14 px-8 bg-[#167EDD] hover:bg-[#167EDD]/90 text-white font-semibold text-lg"
             >
               <a
-                href={`${import.meta.env.BASE_URL}Flumen.zip`}
-                download="Flumen.zip"
+                href="/Flumen.exe"
+                download="Flumen.exe"
                 onClick={handleDownloadClick}
               >
                 <Download className="mr-2 h-6 w-6" />
-                Скачать плагин
+                Скачать для Windows
               </a>
             </Button>
+            <a
+              href="/install"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Инструкция по установке
+            </a>
           </div>
         </div>
 

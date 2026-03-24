@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="md:col-span-3">
               <h4 className="text-lg font-semibold mb-6">Навигация</h4>
               <nav className="flex flex-col space-y-3">
-                <button 
+                <button
                   onClick={() => handleNavClick("hero")}
                   className={`transition-colors duration-200 text-left ${
                     activeSection === "hero" ? "text-[#167EDD]" : "text-white/40 hover:text-white"
@@ -63,7 +63,7 @@ const Footer = () => {
                 >
                   Главная
                 </button>
-                <button 
+                <button
                   onClick={() => handleNavClick("about")}
                   className={`transition-colors duration-200 text-left ${
                     activeSection === "about" ? "text-[#167EDD]" : "text-white/40 hover:text-white"
@@ -71,7 +71,7 @@ const Footer = () => {
                 >
                   О проекте
                 </button>
-                <button 
+                <button
                   onClick={() => handleNavClick("pricing")}
                   className={`transition-colors duration-200 text-left ${
                     activeSection === "pricing" ? "text-[#167EDD]" : "text-white/40 hover:text-white"
@@ -79,7 +79,7 @@ const Footer = () => {
                 >
                   Подписки
                 </button>
-                <button 
+                <button
                   onClick={() => handleNavClick("contacts")}
                   className={`transition-colors duration-200 text-left ${
                     activeSection === "contacts" ? "text-[#167EDD]" : "text-white/40 hover:text-white"
@@ -87,6 +87,9 @@ const Footer = () => {
                 >
                   Контакты
                 </button>
+                <Link to="/install" className="text-white/40 hover:text-white transition-colors duration-200 text-left">
+                  Инструкция по установке
+                </Link>
               </nav>
             </div>
 
