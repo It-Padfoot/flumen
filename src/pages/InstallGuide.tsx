@@ -226,20 +226,14 @@ const InstallGuide = () => {
               <h2 className="text-xl font-semibold">Проверьте, что плагин открыт в Word</h2>
             </div>
             <div className="pl-11 space-y-3 text-muted-foreground leading-relaxed">
-              <p>После запуска Word плагин Flumen должен открыться справа в первом открытом документе.</p>
-              <p>Если панель не появилась автоматически:</p>
               <ol className="space-y-2 list-none pl-0">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
-                  <span>Откройте вкладку <strong className="text-foreground">«Вставка»</strong> в Word</span>
+                  <span>Нажмите кнопку <strong className="text-foreground">«Открыть Flumen»</strong> на панели инструментов сверху справа в открытом документе Word</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
-                  <span>Нажмите <strong className="text-foreground">«Надстройки» / «Мои надстройки»</strong></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#167EDD] flex-shrink-0 mt-1" />
-                  <span>Выберите <strong className="text-foreground">Flumen</strong> и нажмите <strong className="text-foreground">«Открыть»</strong></span>
+                  <span>Плагин отобразится справа, как на скриншоте ниже</span>
                 </li>
               </ol>
               <figure className="rounded-lg border border-border p-2 bg-card">
