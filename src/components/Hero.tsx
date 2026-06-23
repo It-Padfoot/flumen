@@ -20,7 +20,7 @@ const Hero = () => {
     if (typeof window !== "undefined" && (window as any).ym) {
       (window as any).ym(107711909, "reachGoal", "download_plugin");
     }
-    window.open("#/install", "_blank");
+    // window.open("#/install", "_blank");
   };
 
   return (
@@ -63,14 +63,14 @@ const Hero = () => {
                 Скачать для Windows
               </a>
             </Button>
-            <a
+            {/* <a
               href="#/install"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Инструкция по установке
-            </a>
+            </a> */}
           </div>
         </div>
 

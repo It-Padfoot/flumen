@@ -87,9 +87,9 @@ const Footer = () => {
                 >
                   Контакты
                 </button>
-                <Link to="/install" className="text-white/40 hover:text-white transition-colors duration-200 text-left">
+                {/* <Link to="/install" className="text-white/40 hover:text-white transition-colors duration-200 text-left">
                   Инструкция по установке
-                </Link>
+                </Link> */}
               </nav>
             </div>
 
