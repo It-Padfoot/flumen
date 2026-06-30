@@ -73,10 +73,10 @@ const Navigation = () => {
             variant="outline"
             className="bg-white border-2 border-[#167EDD] text-[#167EDD] hover:bg-[#167EDD]/10"
           >
+            {/* Install guide entry is disabled while the guide is being retired. */}
             <a
               href="Flumen.exe"
               download="Flumen.exe"
-              onClick={() => window.open("#/install", "_blank")}
             >
               <Download className="mr-2 h-4 w-4" />
               Скачать
