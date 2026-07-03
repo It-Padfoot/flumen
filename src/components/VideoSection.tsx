@@ -5,7 +5,7 @@ const VideoSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 bg-[#EDF6FF]">
+    <section className="pt-0 pb-20 bg-[#EDF6FF]">
       <div className="container px-4">
         <div className="max-w-5xl mx-auto" ref={ref}>
           <div

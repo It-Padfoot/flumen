@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import heroMockup from "@/assets/hero-mockup.png";
 
 const professions = ["инженеров", "финансистов", "юристов"];
 
@@ -24,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-0">
+    <section id="hero" className="relative flex flex-col items-center overflow-hidden pt-24 pb-12">
       {/* Content */}
       <div className="container relative z-10 px-4 pt-20 pb-0">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -71,18 +70,6 @@ const Hero = () => {
             >
               Инструкция по установке
             </a> */}
-          </div>
-        </div>
-
-        {/* Chat interface mockup */}
-        <div className="relative mt-20 mb-0 animate-scale-in [animation-delay:600ms] opacity-0 [animation-fill-mode:forwards] overflow-hidden h-[50vh]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-0">
-            <img 
-              src={heroMockup}
-              alt="Flumen AI assistant interface in document editor"
-              className="w-full h-auto object-top rounded-t-2xl"
-              style={{ clipPath: 'inset(0 0 25% 0)' }}
-            />
           </div>
         </div>
       </div>
