@@ -17,8 +17,8 @@ const ContactSection = () => {
     },
     {
       icon: Mail,
-      value: "info@flumen.tech",
-      link: "mailto:info@flumen.tech"
+      value: "info@aipenna.ru",
+      link: "mailto:info@aipenna.ru"
     }
   ];
 
